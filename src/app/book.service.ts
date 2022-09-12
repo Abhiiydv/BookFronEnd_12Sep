@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-
+const MAIN_URL= "http://localhost:9092/";
 const BASE_URL = "http://localhost:9092/savebook"
 
 @Injectable({
@@ -24,6 +24,9 @@ export class BookService {
      
     }) {
     return this.http.post(BASE_URL, book);
+  }
+  getBookslist() {
+    return this.http.get(MAIN_URL + 'books');
   }
 
   constructor(public http: HttpClient) { }

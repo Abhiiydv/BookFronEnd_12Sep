@@ -10,6 +10,7 @@ import {MatButtonModule, } from '@angular/material/button'
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+
 import { LoginComponent } from './Components/login/login.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { AboutComponent } from './Components/about/about.component'
@@ -27,6 +28,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HttpClientModule } from '@angular/common/http';
 import { FootComponent } from './foot/foot.component';
 import {MatCardModule} from '@angular/material/card';
+import { BooksComponent } from './Components/books/books.component';
+import { SearchbooksComponent } from './Components/searchbooks/searchbooks.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,9 @@ import {MatCardModule} from '@angular/material/card';
     SignupComponent,
     AboutComponent,
     CreatebookComponent,
-    FootComponent
+    FootComponent,
+    BooksComponent,
+    SearchbooksComponent
     
   ],
   imports: [

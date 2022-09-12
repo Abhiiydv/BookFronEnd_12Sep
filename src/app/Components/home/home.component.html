@@ -1,19 +1,19 @@
 <div class="container-fluid">
    
-    <div class="row mt-3">
-        <div class="container-fluid">
+    <div class="row mt-4">
 
-            <h1 style="text-align: center">Pathsala</h1>
-            <img src="assets/6182899.png"  width="400px" height="350px" alt="">          
+        <div class="col-sm-4">
+        </div>
+      <div class="col-sm-4 middle">
+      <h1 style="text-align: center;">Pathsala</h1>
+           
+      </div>
+    <div class="col-sm-4">
+    </div>           
             <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis mollitia rem ex nobis, minima esse, reprehenderit, aperiam eligendi quisquam odio dignissimos. Omnis animi voluptates, quod veritatis reprehenderit iste harum ab!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis similique fuga quis mollitia quae laborum perspiciatis aliquam et hic ipsam consequuntur expedita dicta veniam quaerat excepturi ex, nemo, eum consequatur?
-
-                
+              
             </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci veniam ut animi, saepe culpa libero velit, atque perspiciatis ipsum inventore delectus obcaecati. Reiciendis asperiores maiores rerum labore, omnis autem? Suscipit.</p>
-           
-        </div>
             
        
     </div>
@@ -28,6 +28,7 @@
                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 
                   <button type="button" class="btn btn-block mb-4">Buy</button>
+                  <button type="button" class="btn btn-block mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
                   
                 </div>
               </div>
@@ -112,5 +113,63 @@
     
 
 </div>
-
 <app-foot></app-foot>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Book Details</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <mat-form-field class="field" appearance="outline">
+            <mat-label>Title</mat-label>
+            <input name="title"  matInput>
+        </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field class="field" appearance="outline">
+            <mat-label>Category</mat-label>
+            <input name="category"  matInput>
+        </mat-form-field>
+        </div>
+        <div class="row"> <mat-form-field class="field" appearance="outline">
+          <mat-label>Logo URL</mat-label>
+          <input name="logo"  matInput>
+      </mat-form-field></div>
+      
+     <div class="row"><mat-form-field class="field" appearance="outline">
+      <mat-label>Author Name</mat-label>
+      <input name="authorname" required matInput>
+  </mat-form-field></div>
+      <div class="row"><mat-form-field class="field" appearance="outline">
+        <mat-label>Price</mat-label>
+        <input type="number"  name="price" matInput>
+    </mat-form-field></div>
+      <div class="row">  <mat-form-field class="field" appearance="outline">
+        <mat-label>Publisher Name</mat-label>
+        <input name="publisher"  matInput>
+    </mat-form-field></div>
+    
+      
+         <div class="row">    <mat-form-field class="field" appearance="outline">
+          <mat-label>Published Date</mat-label>
+          <input type="date"  name="publishedDate"  matInput>
+      </mat-form-field>
+          </div>
+
+       <div class="row"><mat-form-field class="field" appearance="outline">
+        <mat-label>Content</mat-label>
+        <textarea matInput placeholder=".."></textarea>
+      </mat-form-field>
+    </div>
+        
+      <div class="row"><div class="text-center">
+        <button type="button" class="btn  mb-4">Submit</button>
+    </div></div>
+      
+      
+  </div>
+</div>
+

@@ -1,0 +1,14 @@
+button:hover{
+    background-color: rgb(29, 90, 148);
+    color: white;
+  }
+
+  .col-4{
+      height: 400px;
+      
+  }
+
+  .container-fluid{
+
+    background-color: #232946;
+  }

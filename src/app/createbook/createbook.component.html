@@ -56,7 +56,10 @@
                     <input type="date" [(ngModel)]="book.publishedDate" name="publishedDate"  matInput>
                 </mat-form-field>
                     
-               
+                  <mat-form-field class="field" appearance="outline">
+                    <mat-label>Content</mat-label>
+                    <textarea matInput [(ngModel)]="book.content"  placeholder=".."></textarea>
+                  </mat-form-field>
                 
                 
                 
