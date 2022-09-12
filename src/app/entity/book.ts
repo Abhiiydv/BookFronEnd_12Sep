@@ -9,5 +9,5 @@ export class Book {
     publishedDate: string="";
     publisher: string="";
     logo: string="";
-    isActive: boolean;
+    Active: boolean;
 }

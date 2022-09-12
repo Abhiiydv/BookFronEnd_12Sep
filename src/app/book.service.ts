@@ -20,6 +20,7 @@ export class BookService {
       publisher: string;
       publishedDate: string;
       logo: string;
+      Active: boolean;
      
     }) {
     return this.http.post(BASE_URL, book);
