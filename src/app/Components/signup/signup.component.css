@@ -1,0 +1,21 @@
+input, textarea{
+  color:white;
+}
+.container-fluid{
+  background-color: #232946;
+}
+mat-label{
+  color:white;
+}
+.col-lg{
+  margin-left: 30%;
+  max-width: 50%;
+}
+button{
+  background-color: #323a62;
+  color: white;
+}
+button:hover{
+  background-color: rgb(29, 90, 148);
+  color: white;
+}

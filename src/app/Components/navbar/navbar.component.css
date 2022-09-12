@@ -1,0 +1,19 @@
+.fill-remaining-space {
+    /*This fills the remaining space, by using flexbox.  
+   Every toolbar row uses a flexbox row layout. */
+   flex: 1 1 auto;
+ }
+ mat-toolbar{
+  position: sticky;
+  top: 0;
+ }
+ .nav{
+  background-color: #1b203b;
+ }
+
+button{
+  color: white;
+}
+button:hover{
+  background-color: rgb(29, 90, 148);
+}
