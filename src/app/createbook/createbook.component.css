@@ -25,7 +25,7 @@ app-foot{
 .mat-radio-button ~ .mat-radio-button,checkbox {
     margin-left: 16px;
   }
-  mat-radio-group, mat-radio-button{
+  mat-radio-group, mat-radio-button,.form-check{
     color:white;
     margin-left: 10%;
   }

@@ -30,6 +30,7 @@ import { FootComponent } from './foot/foot.component';
 import {MatCardModule} from '@angular/material/card';
 import { BooksComponent } from './Components/books/books.component';
 import { SearchbooksComponent } from './Components/searchbooks/searchbooks.component';
+import { CartComponent } from './Components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { SearchbooksComponent } from './Components/searchbooks/searchbooks.compo
     CreatebookComponent,
     FootComponent,
     BooksComponent,
-    SearchbooksComponent
+    SearchbooksComponent,
+    CartComponent
     
   ],
   imports: [

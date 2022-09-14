@@ -1,25 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
+import { Author } from 'src/app/entity/Author';
+import { SignupService } from 'src/app/signup.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  hide = true;
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  au : Author  = new Author();
+  constructor(public signupserv: SignupService) { }
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
 
-    return this.email.hasError('email') ? 'Not a valid email' : '';
-  }
+  saveAu(){
 
-  doSubmitForm(){}
-  constructor() { }
+  const observable= this.signupserv.save(this.au);
+observable.subscribe((response)=>{
+  console.log(response);
+  console.log(this.au);
+  alert("created");
+},
+function(error){
+  console.log(error);
+  alert("something wrong");
+}
+)
+}
 
   ngOnInit(): void {
   }

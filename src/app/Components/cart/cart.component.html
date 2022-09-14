@@ -1,0 +1,18 @@
+<h3>Cart</h3>
+
+<div class="cart-item" *ngFor="let item of items">
+  <span>Book Title : {{ item.title }}</span>
+  <span>Price : {{ item.price | currency }}</span>
+  <span>Book Author : {{ item.authorname }}</span>
+</div>
+
+<div class="container-fluid">
+
+
+    <h3 style="text-align: center;">Welcome to your Cart.</h3>
+
+    <h5 style="text-align: center;">Dear , Complete your payment before it goes out of stock.</h5>
+    <hr>
+
+
+</div>

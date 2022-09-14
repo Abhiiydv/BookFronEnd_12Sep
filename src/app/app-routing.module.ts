@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './Components/about/about.component';
 import { BooksComponent } from './Components/books/books.component';
+import { CartComponent } from './Components/cart/cart.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
 import { SearchbooksComponent } from './Components/searchbooks/searchbooks.component';
@@ -11,6 +12,11 @@ const routes: Routes = [
   {
     path: "createbook",
     component: CreatebookComponent,
+    pathMatch: "full"
+  },
+  {
+    path: "viewcart",
+    component: CartComponent,
     pathMatch: "full"
   },
   {

@@ -7,35 +7,68 @@
 
     </div>
 
-    <div class="row">
+    <div class="row mt-2">
 
 
-        <div class="col-sm-2">
+        <div class="col-sm-4 mt-5">
         
             <!-- Basic dropdown -->
-<button class="btn btn-primary dropdown-toggle mr-4" type="button" data-toggle="dropdown"
-aria-haspopup="true" aria-expanded="false">Basic dropdown</button>
+            <input type="text" [(ngModel)]="enteredValue1" id="form6Example3" placeholder="Enter category.." 
+            class="form-control" />
+            <button class="btn btn-outline-primary mt-2 mb-1" (click)="SearchByCategory(enteredValue1)" type="button">Search</button>
+           
 
-<div class="dropdown-menu">
-<button>Action</button>
-<a class="dropdown-item" href="#">Another action</a>
-<a class="dropdown-item" href="#">Something else here</a>
-<div class="dropdown-divider"></div>
-<a class="dropdown-item" href="#">Separated link</a>
-</div>
 <!-- Basic dropdown -->
 
         </div>
 
 
 
-        <div class="col-sm-10">
-    <h1>Hi</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ratione sit iste harum aliquid fugiat tempore veritatis quos provident, incidunt architecto ut dolore vel saepe nulla illo! Sunt, accusamus nulla!</p>  
-<br>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sint repudiandae neque consequatur hic eaque nobis necessitatibus, vel aperiam voluptas eum adipisci quia aliquid iure eveniet magnam amet qui rem!</p>  
-<h3>Hey</h3>
+        <div class="col-sm-4 mt-5">
+            <input type="text" id="form6Example3" [(ngModel)]="enteredValue2" placeholder="Enter author name.." 
+            class="form-control" />
+            <button class="btn btn-outline-primary mt-2 mb-1" (click)="SearchByAuthorname(enteredValue2)" type="button">Search</button>
         </div>
+
+        <div class="col-sm-4 mt-5">
+            <input type="text" id="form6Example3" [(ngModel)]="enteredValue3" placeholder="Enter publisher.." 
+            class="form-control" />
+            <button class="btn btn-outline-primary mt-2 mb-1" (click)="SearchByPublisher(enteredValue3)" type="button">Search</button>
+        </div>
+
+    </div>
+    <div class="row">
+
+
+        
+
+
+            <div class="row card-group">
+                <div class="col-md-3" *ngFor="let b of books" >
+                    <div class="card mt-2 card-h80" style="width: 80%;">
+                      
+                      <div class="card-body ">
+                    <mat-card-header>
+                      <mat-card-title>{{b.title}}</mat-card-title>
+                    </mat-card-header>
+                    <img class="card-img mt-2 " src={{b.logo}} width="200px" height="150px"  alt="Card image cap">
+                         <b><h5 class="card-subtitle mb-2 text-muted"> By {{b.authorname}}</h5></b> 
+                       
+                      
+                        <button type="button" class="btn btn-block mb-2">Buy</button>
+                        <button type="button" class="btn btn-block mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+                        
+                      </div>
+                    </div>
+                
+          
+              </div>
+           
+            
+        
+        </div>
+
+
 
     </div>
 

@@ -56,6 +56,15 @@
                     <input type="date" [(ngModel)]="book.publishedDate" name="publishedDate"  matInput>
                 </mat-form-field>
                     
+                 <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="status" [(ngModel)]="book.Active"  id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Active
+                    </label>
+                  </div>
+                  
+               
+
                   <mat-form-field class="field" appearance="outline">
                     <mat-label>Content</mat-label>
                     <textarea matInput [(ngModel)]="book.content"  placeholder=".."></textarea>
@@ -69,7 +78,7 @@
             </div>
             <!--  </form> -->
             </div>
-            
+           
        
 
     </div>

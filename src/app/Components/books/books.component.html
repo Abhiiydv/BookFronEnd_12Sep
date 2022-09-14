@@ -1,27 +1,25 @@
 <div class="container-fluid">
 
-
-    <div class="row card-group">
-        <div class="col-4"  *ngFor="let b of books">
+<div class="row card-group">
+    <div class="col-md-3" *ngFor="let b of books" >
+          <div class="card mt-2 card h-80" style="width: 90%;">
             
-
-              <div class="card mt-2" style="width: 18rem;">
-                <img class="card-img-top" src={{b.logo}} width="200px" height="150px"  alt="Card image cap">
-                <div class="card-body ">
-
-                    <h4 class="card-title">{{b.title}}</h4> 
-                   <b><h5 class="card-subtitle mb-2 text-muted">{{b.authorname}}</h5></b> 
-                  <p class="card-text">{{b.content}}</p>
-                
-                  <button type="button" class="btn btn-block mb-4">Buy</button>
-                  <button type="button" class="btn btn-block mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                  
-                </div>
-              </div>
+            <div class="card-body ">
+          <mat-card-header>
+            <mat-card-title>{{b.title}}</mat-card-title>
+          </mat-card-header>
+          <img class="card-img mt-2" src="{{b.logo}}" width="200px" height="150px"  alt="Card image cap">
+               <b><h5 class="card-subtitle mb-2 text-muted"> By {{b.authorname}}</h5></b> 
+              
             
+              <button type="button" (click)="addToCart(b)" class="btn btn-block mb-2">Buy</button>
+              <button type="button" class="btn btn-block mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+              
+            </div>
+          </div>
+      
 
-        </div>
     </div>
-    
-
 </div>
+</div>
+<app-foot></app-foot>

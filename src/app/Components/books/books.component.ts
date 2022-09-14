@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BookService } from 'src/app/book.service';
+import { CartService } from 'src/app/cart.service';
 import { Book } from 'src/app/entity/book';
 
 @Component({
@@ -11,7 +13,13 @@ export class BooksComponent implements OnInit {
 
   books: Book[] = [];
 
-  constructor(public bookServ: BookService) { }
+  addToCart(product: Book) {
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
+  }
+
+  constructor(public bookServ: BookService , private route: ActivatedRoute,
+    private cartService: CartService) { }
 
   ngOnInit(): void {
     const promise = this.bookServ.getBookslist();
