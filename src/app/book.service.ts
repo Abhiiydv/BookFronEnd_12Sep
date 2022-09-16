@@ -7,6 +7,8 @@ const BASE_URL = "http://localhost:9092/savebook"
 const SEARCHBYCate ="http://localhost:9092/books/category/search?category=";
 const searchbyAuthorname ="http://localhost:9092/books/author/search?authorName=";
 const SearchByPublisher="http://localhost:9092/books/publisher/search?publisherName=";
+const FindActiveBooks=     "http://localhost:9092/books/active";
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,18 +19,23 @@ export class BookService {
     {
       authorId: number;
       title: string;
-      authorname: string;
+      authorName: string;
       category: string;
       price: number;
       content: string;
       publisher: string;
       publishedDate: string;
       logo: string;
-      Active: boolean;
+      bookStatus: boolean;
      
     }) {
     return this.http.post(BASE_URL, book);
   }
+
+  getActiveBooks(){
+    return this.http.get(FindActiveBooks);
+  }
+
   getBookslist() {
     return this.http.get(MAIN_URL + 'books');
   }

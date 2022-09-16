@@ -8,11 +8,17 @@ import { CartService } from 'src/app/cart.service';
 })
 export class CartComponent implements OnInit {
 
+  dupli : any;
+ 
   items = this.cartService.getItems();
+
   
   constructor( private cartService: CartService) { }
 
   ngOnInit(): void {
+
+    this.dupli = this.cartService.getItems();
+    
   }
 
 }

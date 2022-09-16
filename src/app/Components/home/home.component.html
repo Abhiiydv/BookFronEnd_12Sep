@@ -1,118 +1,40 @@
 <div class="container-fluid">
-   
-    <div class="row mt-4">
-
-        <div class="col-sm-4">
-        </div>
-      <div class="col-sm-4 middle">
-      <h1 style="text-align: center;">Pathsala</h1>
-           
-      </div>
-    <div class="col-sm-4">
-    </div>           
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis mollitia rem ex nobis, minima esse, reprehenderit, aperiam eligendi quisquam odio dignissimos. Omnis animi voluptates, quod veritatis reprehenderit iste harum ab!
-              
-            </p>
-            
-       
-    </div>
-
-    <div class="row mt-5">
-
-
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/lib.avif" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                
-                  <button type="button" class="btn btn-block mb-4">Buy</button>
-                  <button type="button" class="btn btn-block mb-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
-                  
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/lib.avif" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button type="button" class="btn btn-block mb-4">Buy</button>
-                 
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/lib.avif" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-block mb-4">Buy</button>
-                  
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/lib.avif" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-block mb-4">Buy</button>
-                  
-                </div>
-              </div>
-        </div>
-        
-
-    </div>
-    <div class="row mt-5 mb-5">
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/lib.avif" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                
-                  <button type="button" class="btn btn-block mb-4">Buy</button>
-                  
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/lib.avif" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <button type="button" class="btn btn-block mb-4">Buy</button>
-                 
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/lib.avif" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-block mb-4">Buy</button>
-                  
-                </div>
-              </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/lib.avif" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button type="button" class="btn btn-block mb-4">Buy</button>
-                  
-                </div>
-              </div>
-        </div>
-    </div>
-
-    
-
+<div class="row">
+  <h2  style="text-align:center"  >Welocme</h2>
+  <h3 style="text-align:center" >Available books for purchase.</h3>
 </div>
+  <div class="row card-group">
+      <div class="col-md-3" *ngFor="let b of books" >
+            <div class="card mt-2 text-center card h-80" style="width: 90%; height: 450px;">
+              
+              <div class="card-body ">
+            <mat-card-header>
+              <mat-card-title>{{b.title}}</mat-card-title>
+            </mat-card-header>
+            <div class="mid text-center">
+              <img class="card-img mt-2 " src="{{b.logo}}" width="180px" height="220px"  alt="Card image cap">
+                 <b><h5 class="card-subtitle mb-2 text-muted"> By {{b.authorName}}</h5></b> 
+            </div>
+            
+              
+                 <div class="stats mt-2">
+                  <div class="d-flex justify-content-between p-price"><span>Author</span><span>{{b.authorName}}</span></div>
+                  <div class="d-flex justify-content-between p-price"><span>Category</span><span>{{b.category}}</span></div>
+                  <div class="d-flex justify-content-between p-price"><span>Price</span><span>{{b.price |currency: 'INR'}}</span></div>
+              </div>
+              <div class="btns text-center">
+                <button type="button" (click)="addToCart(b)" class="btn btn-block mb-2">Buy</button>
+                <button type="button" class="btn btn-block mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Details</button>
+              </div>
+                
+                
+              </div>
+            </div>
+        
+  
+      </div>
+  </div>
+  </div>
 <app-foot></app-foot>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -168,8 +90,9 @@
       <div class="row"><div class="text-center">
         <button type="button" class="btn  mb-4">Submit</button>
     </div></div>
-      
-      
+  
   </div>
+</div>
+</div>
 </div>
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { BookService } from 'src/app/book.service';
+import { CartService } from 'src/app/cart.service';
 import { Book } from 'src/app/entity/book';
 
 @Component({
@@ -17,7 +19,7 @@ export class SearchbooksComponent implements OnInit {
 
   SearchByCategory(enteredValue1:string){
 
-    this.bookserv.searchbyCategory(enteredValue1).subscribe(response =>{
+      this.bookserv.searchbyCategory(enteredValue1).subscribe(response =>{
       console.log(response);
       console.log(enteredValue1);
       console.log(this.books);
@@ -33,6 +35,11 @@ export class SearchbooksComponent implements OnInit {
       
     }
      )
+  }
+
+  addToCart(product: Book) {
+    this.cartService.addToCart(product);
+    window.alert('Your product has been added to the cart!');
   }
 
   SearchByAuthorname(enteredValue2:string){
@@ -76,7 +83,8 @@ export class SearchbooksComponent implements OnInit {
 
 
 
-  constructor(private bookserv: BookService) { }
+  constructor(private bookserv: BookService , private route: ActivatedRoute,
+    private cartService: CartService) { }
 
   ngOnInit(): void {
   }

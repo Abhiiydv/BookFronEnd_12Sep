@@ -1,12 +1,3 @@
-
-
-  div.col-md{
-    margin: auto;
-    padding: 2em;
-  }
-  div.container-fluid{
-    
-    margin: auto;
-    background-color: rgba(77, 77, 203, 0.756);
-    padding: 2em;
-  }
+.mid{
+  text-align: center;
+}
