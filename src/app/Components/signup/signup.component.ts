@@ -19,11 +19,11 @@ export class SignupComponent implements OnInit {
 observable.subscribe((response)=>{
   console.log(response);
   console.log(this.au);
-  alert("created");
+  alert("Account created!");
 },
 function(error){
   console.log(error);
-  alert("something wrong");
+  alert("Something wrong");
 }
 )
 }

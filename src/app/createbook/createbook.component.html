@@ -32,10 +32,15 @@
                     <mat-label>Category</mat-label>
                     <input name="category" [(ngModel)]="book.category" matInput>
                 </mat-form-field>
-                <mat-form-field class="field" appearance="outline">
+                <!-- <mat-form-field class="field" appearance="outline">
                     <mat-label>Logo URL</mat-label>
                     <input name="logo" [(ngModel)]="book.logo" matInput>
-                </mat-form-field>
+                </mat-form-field> -->
+               
+                    
+                   <input class="form-control form-control-sm" id="formFileSm" type="file" accept="image/*"  [(ngModel)]="book.logo" name="logo" id="logo"  type="file" (change)="onImageUpload($event)">
+                  
+        
                 <mat-form-field class="field" appearance="outline">
                     <mat-label>Author Name</mat-label>
                     <input name="authorname" [(ngModel)]="book.authorName" required matInput>

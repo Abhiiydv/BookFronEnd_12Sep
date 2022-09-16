@@ -37,3 +37,8 @@ app-foot{
     background-color: rgb(29, 90, 148);
     color: white;
   }
+  .form-control{
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 10px;
+  }

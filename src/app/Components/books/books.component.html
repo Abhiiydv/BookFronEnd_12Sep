@@ -1,6 +1,6 @@
 <div class="container-fluid">
 
-  <div class="row card-group">
+  <div class="row card-group mb-5">
     <div class="col-md-3" *ngFor="let b of books">
       <div class="card mt-5 text-center card h-80" style="width: 90%; height: 450px;">
 
@@ -9,7 +9,7 @@
             <mat-card-title>{{b.title}}</mat-card-title>
           </mat-card-header>
           <div class="mid text-center">
-            <img class="card-img mt-2 " src="{{b.logo}}" width="180px" height="220px" alt="Card image cap">
+            <img class="card-img mt-2 " src="http://localhost:9092/download/?image={{b.logo}}" width="180px" height="220px" alt="Card image cap">
             <b>
               <h5 class="card-subtitle mb-2 text-muted"> By {{b.authorName}}</h5>
             </b>

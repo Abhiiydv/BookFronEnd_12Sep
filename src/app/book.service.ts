@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Book } from './entity/book';
 
 const MAIN_URL= "http://localhost:9092/";
 const BASE_URL = "http://localhost:9092/savebook"
@@ -15,21 +16,13 @@ const FindActiveBooks=     "http://localhost:9092/books/active";
 })
 export class BookService {
 
-  createBook(book:
-    {
-      authorId: number;
-      title: string;
-      authorName: string;
-      category: string;
-      price: number;
-      content: string;
-      publisher: string;
-      publishedDate: string;
-      logo: string;
-      bookStatus: boolean;
-     
-    }) {
-    return this.http.post(BASE_URL, book);
+  createBook(book: Book, uploadedImage: File) {
+    const formData = new FormData();
+    formData.append('bookstring', JSON.stringify(book));
+
+formData.append('image', uploadedImage);
+
+return this.http.post(BASE_URL, formData);
   }
 
   getActiveBooks(){

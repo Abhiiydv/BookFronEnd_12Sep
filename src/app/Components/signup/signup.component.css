@@ -62,7 +62,7 @@ body {
 
 .card .card-body {
     padding: 30px;
-    background-color: transparent;
+    background-color: transparent
 }
 
 .btn-primary, .btn-primary.disabled, .btn-primary:disabled {

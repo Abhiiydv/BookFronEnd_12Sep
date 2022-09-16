@@ -31,6 +31,7 @@ import {MatCardModule} from '@angular/material/card';
 import { BooksComponent } from './Components/books/books.component';
 import { SearchbooksComponent } from './Components/searchbooks/searchbooks.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { AuthorDashboardComponent } from './Components/author-dashboard/author-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { CartComponent } from './Components/cart/cart.component';
     FootComponent,
     BooksComponent,
     SearchbooksComponent,
-    CartComponent
+    CartComponent,
+    AuthorDashboardComponent
     
   ],
   imports: [

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './Components/about/about.component';
+import { AuthorDashboardComponent } from './Components/author-dashboard/author-dashboard.component';
 import { BooksComponent } from './Components/books/books.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -47,6 +48,11 @@ const routes: Routes = [
   {
     path: "home",
     component: HomeComponent,
+    pathMatch: "full"
+  },
+  {
+    path: "author-dashboard",
+    component: AuthorDashboardComponent,
     pathMatch: "full"
   },
 ];
