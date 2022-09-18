@@ -1,5 +1,8 @@
 <div class="container-fluid">
 
+  <div class="row text-center">
+    <h1 style="color: white; margin-top:10px">Book Store</h1>
+  </div>
   <div class="row card-group mb-5">
     <div class="col-md-3" *ngFor="let b of books">
       <div class="card mt-5 text-center card h-80" style="width: 90%; height: 450px;">
@@ -22,10 +25,14 @@
             <div class="d-flex justify-content-between p-price"><span>Price</span><span>{{b.price |currency:
                 'INR'}}</span></div>
           </div>
-          <div class="btns text-center">
+          <!-- <div class="btns text-center">
             <button type="button" (click)="addToCart(b)" class="btn btn-block mb-2">Buy</button>
             <button type="button" class="btn btn-block mb-2" data-bs-toggle="modal"
               data-bs-target="#exampleModal">Details</button>
+          </div> -->
+          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            <button type="button" (click)="addToCart(b)" class="btn  btn-block">Add to Cart</button>
+            
           </div>
 
 

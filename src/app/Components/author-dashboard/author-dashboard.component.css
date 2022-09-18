@@ -3,6 +3,29 @@ div.header{
     background-color: transparent;
 }
 button {
-    background-color: rgb(246, 246, 247);
+    background-color: rgb(51, 51, 226);
     margin: 15px;
+    color:white;
+   
   }
+.form-control{
+    width: 50%;
+    margin-left: 25%;
+}
+.srchbttn{
+    margin-left: 45%;
+}
+tr,th,td{
+    margin: 5px;
+    
+    padding-right:20px;
+}
+td{
+    margin: 50px;
+}
+table{
+    margin: auto;
+}
+  
+
+   

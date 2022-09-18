@@ -101,5 +101,10 @@ body {
 }
 
 .btn{
-  margin: 10px;
+  margin: 15px;
+  
 }
+.container-fluid{
+    background-color: #232946;
+}
+

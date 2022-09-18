@@ -3,14 +3,18 @@
 }
 
 button {
-  background-color: rgb(246, 246, 247);
+  background-color: rgb(201, 201, 213);
+
+
   margin: 5px;
 }
 
 .content>mat-card {
   width: 200px;
 }
-
+.container-fluid{
+  background-color: #232946;
+}
 .card {
   margin-left: 20px;
 }

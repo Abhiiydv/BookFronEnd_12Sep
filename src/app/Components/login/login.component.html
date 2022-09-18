@@ -73,8 +73,8 @@
         </div> 
     </div> -->
 
-
-<div class="container mt-3">
+<div class="container-fluid">
+<div class="container">
 
 
 
@@ -86,10 +86,11 @@
               <div class="card-body p-md-5">
                 <div class="row justify-content-center">
                   <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-    
-                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login <span>and Explore!</span></p>
-    
-                    <form class="mx-1 mx-md-4">
+                    <p class="text-center h2 fw-bold mb-3 mx-1 mx-md-4 mt-4">Dear <span class="text-primary dark:text-secondary">Author</span></p>
+                    <p class="text-center h3 fw-bold mb-5 mx-1 mx-md-4 mt-2">Login <span>and Explore Pathsala!</span></p>
+
+                    
+                    
     
                       <div class="d-flex flex-row align-items-center mb-4">
                         <!-- <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -98,25 +99,10 @@
                           <label class="form-label" for="form3Example1c">Your Name</label>
                         </div> -->
                         <mat-form-field class="field" appearance="outline">
-                          <mat-label>Name</mat-label>
-                          <input required name="name"  matInput>
+                          <mat-label>Email</mat-label>
+                          <input required name="email" [(ngModel)]="au.authorEmail"  matInput>
                       </mat-form-field>
                       </div>
-    
-                      <!-- <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                          <input type="email" id="form3Example3c" class="form-control" />
-                          <label class="form-label" for="form3Example3c">Your Email</label>
-                        </div>
-                      </div> -->
-
-
-                      <!-- <div class="d-flex flex-row align-items-center mb-4  ">
-                        <mat-form-field class="field" appearance="outline">
-                          <mat-label>Email</mat-label>
-                          <input name="email"  matInput>
-                      </mat-form-field></div> -->
     
                       <div class="d-flex flex-row align-items-center mb-4">
                         <!-- <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
@@ -126,18 +112,18 @@
                         </div> -->
                         <mat-form-field class="field" appearance="outline">
                           <mat-label>Password</mat-label>
-                          <input type="password" required  name="name"  matInput>
+                          <input type="password" [(ngModel)]="au.authorPassword" required  name="name"  matInput>
                       </mat-form-field>
                       </div>
     
                       
     
                       <div class="d-flex justify-content-center  mx-4 mb-3 mb-lg-4">
-                        <button type="button" routerLink="/author-dashboard" class="btn btn-primary btn-lg">Login</button>
-                        <button type="button" routerLink="/signup" class="btn btn-primary btn-lg">Signup</button>
+                        <button type="button" routerLink="/author-dashboard" (click)="login()" class="btn btn-primary btn-block">Login</button>
+                        <button type="button" routerLink="/signup" class="btn btn-primary btn-block">Signup</button>
                       </div>
     
-                    </form>
+                  
     
                   </div>
                   <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
@@ -156,7 +142,7 @@
 
 
 </div>
-     
+</div>
      
    
 <app-foot></app-foot>

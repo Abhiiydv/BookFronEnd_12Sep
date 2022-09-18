@@ -1,15 +1,155 @@
 <div class="container-fluid">
 
 
-    <div class="row header mt-1">
+    <div class="container">
 
-        <div class="d-flex justify-content-center  mx-2 mb-3 mb-lg-3">
-            <button type="button" routerLink="/createbook" class="btn btn-block mb-2">Add Book</button>
-            <button type="button" routerLink="/signup" class="btn btn-block mb-2">Block book</button>
-            <button type="button" routerLink="/getyourBooks()" class="btn btn-block mb-2">Your Books</button>
-          </div>
+       <div class="row justify-content-center mt-5 mx-2 mb-3 mb-lg-3">
 
-    </div>
+        <p class="text-center h2 fw-bold mb-3 mx-1 mx-md-4 mt-4">Dear <span class="text-primary dark:text-secondary">Author</span></p>
+                    <p class="text-center h3 fw-bold mb-5 mx-1 mx-md-4 mt-2">Welcome <span> to dashboard.</span></p>
+       </div>
+
+        <div class="row">
+
+
+            <div class="col-sm-6">
+
+                <img src="assets/author.jpg" alt="">
+
+            </div>
+
+            <div class="col-sm-6">
+
+                <div class="d-flex btns justify-content-center  mx-2 mb-3 mb-lg-3">
+                    <button type="button" routerLink="/createbook" class="btn btn-block mb-2">Add Book</button>
+                    
+                    
+                  </div>
+
+                  <input type="text" id="form6Example3" [(ngModel)]="name" placeholder="Enter author name.."
+                  class="form-control" />
+                <button class="btn srchbttn btn-block mb-2" (click)="getyourBooks(name)"
+                  type="button">Search</button>
+                  
+                  <div class="row mt-2 justify-content-center">
+                    <div class="col justify-content-center" >
+                      
+                      <table class="text-center">
+                        <thead>
+                            <tr>
+                               
+                                <th>Title</th>
+                                
+                                <th>Active</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                          
+                          <tr class="text-center" *ngFor="let b of books">
+                          <td>{{b.title}}</td>
+
+                          <td>{{b.bookStatus}}</td>
+                          <td><button mat-icon-button color="grey"   data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                              </svg></button>
+                              <button mat-icon-button color="white" >
+                                <mat-icon>delete</mat-icon>
+                            </button>
+                        </td>
+                          </tr>
+                      </table>
+              
+                    </div>
+              
+                  </div>
+            </div>
+          
+
+            </div>
+            <div class="row">
+                <div class="col">
+
+                  
+                  
+                    </div>
+            </div>
+            
+
+        </div>
+        
+    
+    <!-- <div class="row header mt-1">
+
+        
+
+    </div> -->
+  
 
 
 </div>
+<app-foot></app-foot>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel">Book Details</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <mat-form-field class="field" appearance="outline">
+              <mat-label>Title</mat-label>
+              <input name="title" [(ngModel)]="b.title" matInput>
+          </mat-form-field>
+          </div>
+          <div class="row">
+            <mat-form-field class="field" appearance="outline">
+              <mat-label>Category</mat-label>
+              <input name="category"  matInput>
+          </mat-form-field>
+          </div>
+          <div class="row"> <mat-form-field class="field" appearance="outline">
+            <mat-label>Logo URL</mat-label>
+            <input name="logo"  matInput>
+        </mat-form-field></div>
+        
+       <div class="row"><mat-form-field class="field" appearance="outline">
+        <mat-label>Author Name</mat-label>
+        <input name="authorname" required matInput>
+    </mat-form-field></div>
+        <div class="row"><mat-form-field class="field" appearance="outline">
+          <mat-label>Price</mat-label>
+          <input type="number"  name="price" matInput>
+      </mat-form-field></div>
+        <div class="row">  <mat-form-field class="field" appearance="outline">
+          <mat-label>Publisher Name</mat-label>
+          <input name="publisher"  matInput>
+      </mat-form-field></div>
+      
+        
+           <div class="row">    <mat-form-field class="field" appearance="outline">
+            <mat-label>Published Date</mat-label>
+            <input type="date"  name="publishedDate"  matInput>
+        </mat-form-field>
+            </div>
+  
+         <div class="row"><mat-form-field class="field" appearance="outline">
+          <mat-label>Content</mat-label>
+          <textarea matInput placeholder=".."></textarea>
+        </mat-form-field>
+      </div>
+          
+        <div class="row"><div class="text-center">
+          <button type="button" class="btn  mb-4">Submit</button>
+      </div></div>
+    
+    </div>
+  </div>
+  </div>
+  </div>
+

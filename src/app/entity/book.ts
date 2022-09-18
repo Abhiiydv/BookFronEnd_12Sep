@@ -1,5 +1,6 @@
 export class Book {
 
+    bookId:number;
     authorId:number;
     title:string="";
     authorName:string="";

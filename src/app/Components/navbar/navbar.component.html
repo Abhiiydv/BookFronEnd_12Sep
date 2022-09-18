@@ -8,12 +8,11 @@
     <!-- This fills the remaining space of the current row -->
     <span class="fill-remaining-space"></span>
     <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-        <button mat-button routerLink="login">Login</button>
-        <button mat-button routerLink="signup">Signup</button>
-
-
+        <button mat-button routerLink="home">Home</button>
         <button mat-button routerLink="about">About</button>
         <button mat-button routerLink="books">Books</button>
+        <button mat-button routerLink="login">Login</button>
+        <button mat-button routerLink="signup">Signup</button>
         <button mat-button routerLink="viewcart"><span class="material-icons">shopping_cart</span></button>
     </div>
     <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
@@ -26,6 +25,6 @@
     <button mat-menu-item routerLink="signup">Signup</button>
 
     <button mat-menu-item routerLink="login">Login</button>
-    <button mat-menu-item routerLink="about">About</button>
+    
     <!--<button mat-menu-item>Help</button>-->
 </mat-menu>

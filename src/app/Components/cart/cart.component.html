@@ -1,6 +1,30 @@
 
 
-<div class="container-fluid">
+<div class="container mt-2 text-center">
+  
+
+  
+   
+  
+    
+    
+          <div>
+    
+          <input type="text" id="form3Example1c" class="form-control" 
+            placeholder="Reader Name" [(ngModel)]=buyBook.readerName  name="readerName" /> <br>
+            
+          </div>
+          
+          <div >
+            <input type="text" id="form3Example1c" class="form-control"
+            placeholder="Reader EmailId" [(ngModel)]=buyBook.readerEmailId  name="readerEmailId" />
+            
+          </div>
+         
+  
+          <button type="submit"  class="btn btn-primary btn-block" (click)="getTotalCartValue()" >Total Cart Value</button><span class="text-primary dark:text-secondary">{{ totalCartPrice | currency : 'INR'  }} </span>
+  <a type="submit" class="btn btn-primary btn-block" (click)= "saveReaderDetails(buyBook)">Order</a>
+  
 
 
   <!-- <div class="main text-center mt-3">
@@ -10,12 +34,11 @@
     <hr>
   </div> -->
 
-
 </div>
-<div class="container" *ngIf="items.length<1">
+<div class="container" *ngIf="books.length<1">
 
   <div class="container  mt-100">
-    <div class="row">
+    <div class="col">
     
      <div class="col-md-12">
      
@@ -39,14 +62,17 @@
      </div>
     
     </div>
+    
    
    </div>
+   
 
 
 </div>
 <div class="container-fluid">
 
   <div class="row card-group">
+    
     
       <div class="col-md-3" *ngFor="let b of dupli" >
        
@@ -67,7 +93,7 @@
               </div>
               <div class="btns text-center">
                 
-                <button type="button" class="btn btn-block mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Payment</button>
+                <button type="button" class="btn btn-block mb-2" (click)="getRecords(b)" data-bs-toggle="modal" data-bs-target="#exampleModal">Payment</button>
               </div>
                 
                 
@@ -77,49 +103,46 @@
   
       </div>
   </div>
+  
+
+
+
+
+
   </div>
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLabel">Details</h3>
+          <h3 class="modal-title" id="exampleModalLabel">Order details</h3>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="row">
-            <mat-form-field class="field" appearance="outline">
-              <mat-label>Name</mat-label>
-              <input name="title"  matInput>
-          </mat-form-field>
+           
+          <div class="form-outline mb-2">
+            <label class="form-label" for="form6Example1">Name</label>
+            <input type="text" id="form6Example1" [(ngModel)]=buyBook.readerName class="form-control" />
+
           </div>
-          <div class="row">
-            <mat-form-field class="field" appearance="outline">
-              <mat-label>Email</mat-label>
-              <input name="category"  matInput>
-          </mat-form-field>
           </div>
-          
-      
-        
-           <div class="row">    <mat-form-field class="field" appearance="outline">
-            <mat-label>Published Date</mat-label>
-            <input type="date"  name="publishedDate"  matInput>
-        </mat-form-field>
-            </div>
-  
-         <div class="row"><mat-form-field class="field" appearance="outline">
-          <mat-label>Content</mat-label>
-          <textarea matInput placeholder=".."></textarea>
-        </mat-form-field>
+        <div class="row">
+          <div class="form-outline mb-2">
+            <label class="form-label" for="form6Example1">Email</label>
+            <input type="email" id="form6Example1" [(ngModel)]=buyBook.readerEmailId class="form-control" />
+
+          </div>
       </div>
           
         <div class="row"><div class="text-center">
-          <button type="button" class="btn  mb-4">Done</button>
+          <button type="button" class="btn  mb-4" (click)=" saveReaderDetails(buyBook)">Done</button>
       </div></div>
     
     </div>
   </div>
   </div>
+
+
   </div>
   
   

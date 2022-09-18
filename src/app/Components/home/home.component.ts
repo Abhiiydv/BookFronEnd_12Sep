@@ -12,11 +12,36 @@ import { Book } from 'src/app/entity/book';
 export class HomeComponent implements OnInit {
 
   books: Book[] = [];
+
+  bb:Book[]=[];
+  query:string;
+
+  SearchByAnything(query){
+
+     this.bookServ.searchbyAnything(query).subscribe(response =>{
+      console.log(response);
+      console.log(query);
+      console.log(this.bb);
+     
+      this.bb = response as Book[];
+    
+     },
+     function (error) {
+      console.log(error);
+      console.log(query);
+      alert("something wrong");
+      console.log(this.s);
+      
+    }
+     )
+  }
+ 
   constructor(public bookServ: BookService , private route: ActivatedRoute,
     private cartService: CartService) { }
     addToCart(product: Book) {
       this.cartService.addToCart(product);
       window.alert('Your product has been added to the cart!');
+      
     }
   ngOnInit(): void {
     const promise = this.bookServ.getActiveBooks();
