@@ -66,10 +66,10 @@ export class BookService {
     this.http.put(UPDATE_BOOK_BY_BOOKID,id);
     }
 
-    // deleteBookByBookId( bookId :number )
-    // {
-    //  this.http.delete( DELETE_BY_BOOKID,bookId);
-    //  }
+    deleteBookByBookId( bookId  ): Observable<Object>
+    {
+      return this.http.delete(DELETE_BY_BOOKID+ bookId);
+     }
 
   constructor(public http: HttpClient) { }
 }

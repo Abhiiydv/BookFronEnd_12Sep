@@ -50,21 +50,23 @@ export class AuthorDashboardComponent implements OnInit {
   
   }
 
-  // deleteStudent(studentRoll: number) {
-  //   this.bs.d(studentRoll).subscribe(response => {
-  //     console.log(response);
-  //     this.ngOnInit();
-  //     alert("Deleted successfully!");
+  deleteStudent(bid: number) {
+    this.bs.deleteBookByBookId(bid).subscribe(response => {
+      console.log(response);
+      
+      alert("Book Id " +bid +" Deleted successfully!");
 
-  //   },
-  //     function (error) {
-  //       console.log(error);
-  //       alert("Something went wrong!");
-  //     }
+    },
+      function (error) {
+        console.log(error);
+        console.log("idgoing");
+        console.log(bid);
+        alert("Something went wrong!");
+      }
 
-  //   )
+    )
 
-  // }
+  }
 
   constructor(public bs : BookService) { }
 
