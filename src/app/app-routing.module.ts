@@ -6,6 +6,7 @@ import { BooksComponent } from './Components/books/books.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { HomeComponent } from './Components/home/home.component';
 import { LoginComponent } from './Components/login/login.component';
+import { PurchasedbooksComponent } from './Components/purchasedbooks/purchasedbooks.component';
 import { SearchbooksComponent } from './Components/searchbooks/searchbooks.component';
 import { SignupComponent } from './Components/signup/signup.component';
 import { CreatebookComponent } from './createbook/createbook.component';
@@ -53,6 +54,11 @@ const routes: Routes = [
   {
     path: "author-dashboard",
     component: AuthorDashboardComponent,
+    pathMatch: "full"
+  },
+  {
+    path: "purchasedbooks",
+    component: PurchasedbooksComponent,
     pathMatch: "full"
   },
 ];

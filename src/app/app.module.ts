@@ -32,6 +32,7 @@ import { BooksComponent } from './Components/books/books.component';
 import { SearchbooksComponent } from './Components/searchbooks/searchbooks.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { AuthorDashboardComponent } from './Components/author-dashboard/author-dashboard.component';
+import { PurchasedbooksComponent } from './Components/purchasedbooks/purchasedbooks.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AuthorDashboardComponent } from './Components/author-dashboard/author-d
     BooksComponent,
     SearchbooksComponent,
     CartComponent,
-    AuthorDashboardComponent
+    AuthorDashboardComponent,
+    PurchasedbooksComponent
     
   ],
   imports: [

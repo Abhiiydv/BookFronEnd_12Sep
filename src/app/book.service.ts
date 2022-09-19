@@ -15,6 +15,7 @@ const SEARCH_BY_ANYTHING = "http://localhost:9092/searchbooks/?query=";
 const UPDATE_BOOK_BY_BOOKID ="http://localhost:9092/books/update/";
 const DELETE_BY_BOOKID ="http://localhost:9092/books/delete/";
 const login_url ="http://localhost:9092/login";
+const PURCHASED_BOOKS_URL ="http://localhost:9094/getPurchasedbooks/";
 
 @Injectable({
   providedIn: 'root'
@@ -49,7 +50,9 @@ export class BookService {
     return this.http.get(SEARCH_BY_Publisher + enteredValue3);
 
   }
-   
+  getPurchasedBooks(readerEmailId:string): Observable<Object> {
+    return this.http.get(PURCHASED_BOOKS_URL + readerEmailId);
+    }
 
   getBookDataByBookId(id :number): Observable<Object> {
     return this.http.get(GET_DATA_BY_BID + id);

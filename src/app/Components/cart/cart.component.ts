@@ -34,7 +34,7 @@ export class CartComponent implements OnInit {
     }
     console.log(obj);
 
-    // this.orderBook(buyBook);
+   
 
   }
 
@@ -46,7 +46,6 @@ export class CartComponent implements OnInit {
 
     observable.subscribe((response) => {
       console.log(response);
-      window.location.href = "/read"
     },
       function (error) {
         console.log(error);
