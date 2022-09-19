@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/cart.service';
 import { Book } from 'src/app/entity/book';
-import BuyBook from 'src/app/entity/BuyBook';
+import Reader from 'src/app/entity/Reader';
 import { RedaerServiceService } from 'src/app/redaer-service.service';
 
 
@@ -13,7 +13,7 @@ import { RedaerServiceService } from 'src/app/redaer-service.service';
 export class CartComponent implements OnInit {
 
 
-  buyBook: BuyBook = new BuyBook();
+  obj: Reader = new Reader();
 
 
 
@@ -22,26 +22,26 @@ export class CartComponent implements OnInit {
   totalvalue: number;
   totalCartPrice: number;
 
-  saveReaderDetails(buyBook) {
+  saveReaderDetails(obj) {
     this.books = this.cartService.getItems();
  
 
     for (let i = 0; i < this.books.length; i++) {
-      buyBook.bookId = this.books[i].bookId;
-      buyBook.price = this.books[i].price;
+      obj.bookId = this.books[i].bookId;
+      obj.price = this.books[i].price;
 
-      this.orderBook(buyBook);
+      this.orderBook(obj);
     }
-    console.log(buyBook);
+    console.log(obj);
 
     // this.orderBook(buyBook);
 
   }
 
 
-  orderBook(buyBook) {
-    console.log(buyBook);
-    const observable = this.readerService.orderBook(buyBook);
+  orderBook(obj) {
+    console.log(obj);
+    const observable = this.readerService.orderBook(obj);
 
 
     observable.subscribe((response) => {

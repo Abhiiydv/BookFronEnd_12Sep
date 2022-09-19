@@ -3,6 +3,7 @@ import {FormControl, Validators} from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { BookService } from 'src/app/book.service';
 import { Author } from 'src/app/entity/Author';
+import { TransferService } from 'src/app/transfer.service';
 
 @Component({
   selector: 'app-login',
@@ -24,17 +25,16 @@ export class LoginComponent implements OnInit {
  auName:string;
  login(){
 
-  console.log("bhaskar");
-  console.log(this.au);
+ // console.log(this.au);
   const observable= this.bserv.getLogin(this.au);
-  
-observable.subscribe((response)=>{
+  observable.subscribe((response)=>{
   console.log(response);
-  console.log(this.au);
+  
+ // console.log(this.au);
 
   if(response==null){
     this.router.navigate(['/home']);
-    this.auName = this.au.authorName;
+    //this.auName = this.au.authorName;
   }
   else
   this.router.navigate(['/author-dashboard']);
@@ -47,8 +47,6 @@ function(error){
 )
 }
 
-
-
   email = new FormControl('', [Validators.required, Validators.email]);
 
   getErrorMessage() {
@@ -59,7 +57,8 @@ function(error){
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
-  constructor(private bserv: BookService , private router : Router) { }
+ 
+  constructor(private bserv: BookService , private router : Router , private ts: TransferService) { }
 
   ngOnInit(): void {
   }

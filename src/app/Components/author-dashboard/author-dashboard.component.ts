@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookService } from 'src/app/book.service';
 import { Book } from 'src/app/entity/book';
+import { TransferService } from 'src/app/transfer.service';
 
 
 
@@ -11,10 +13,8 @@ import { Book } from 'src/app/entity/book';
 })
 export class AuthorDashboardComponent implements OnInit {
 
-  
   books: Book[] = [];
   name:string;
-
 
   b={
     bookId:0,
@@ -28,6 +28,27 @@ export class AuthorDashboardComponent implements OnInit {
     publisher: "",
     logo: "",
     bookStatus: ''
+
+  }
+
+bres : Book = new Book();
+
+  getRecordsofBook(id: number){
+
+    this.bs.getBookDataByBookId(id).subscribe(response => {
+      console.log(response);
+     this.bres = response as Book;
+     console.log(this.bres);
+
+    },
+      function (error) {
+        console.log(error);
+        
+      
+        alert("Something went wrong!");
+      }
+
+    )
 
   }
 
@@ -47,7 +68,22 @@ export class AuthorDashboardComponent implements OnInit {
       this.books = response as Book[];
 
     })
-  
+  }
+
+  updateBook(bid: number) {
+
+    const observable = this.bs.updateBookById(bid, this.bres);
+    observable.subscribe(
+      (response) => {
+        console.log(response);
+        console.log(this.bres);
+        alert("Data updated successfully!");
+      },
+      function (error) {
+        console.log(error);
+        alert("Something went wrong!");
+      }
+    )
   }
 
   deleteStudent(bid: number) {
@@ -68,9 +104,10 @@ export class AuthorDashboardComponent implements OnInit {
 
   }
 
-  constructor(public bs : BookService) { }
+  constructor(public bs : BookService , private ts: TransferService ,private router:Router) { }
 
   ngOnInit(): void {
+
   }
 
 }

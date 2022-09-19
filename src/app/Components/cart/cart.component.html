@@ -11,19 +11,19 @@
           <div>
     
           <input type="text" id="form3Example1c" class="form-control" 
-            placeholder="Reader Name" [(ngModel)]=buyBook.readerName  name="readerName" /> <br>
+            placeholder="Reader Name" [(ngModel)]=obj.readerName  name="readerName" /> <br>
             
           </div>
           
           <div >
             <input type="text" id="form3Example1c" class="form-control"
-            placeholder="Reader EmailId" [(ngModel)]=buyBook.readerEmailId  name="readerEmailId" />
+            placeholder="Reader EmailId" [(ngModel)]=obj.readerEmailId  name="readerEmailId" />
             
           </div>
          
   
           <button type="submit"  class="btn btn-primary btn-block" (click)="getTotalCartValue()" >Total Cart Value</button><span class="text-primary dark:text-secondary">{{ totalCartPrice | currency : 'INR'  }} </span>
-  <a type="submit" class="btn btn-primary btn-block" (click)= "saveReaderDetails(buyBook)">Order</a>
+  <a type="submit" class="btn btn-primary btn-block" (click)= "saveReaderDetails(obj)">Order</a>
   
 
 
@@ -122,20 +122,20 @@
            
           <div class="form-outline mb-2">
             <label class="form-label" for="form6Example1">Name</label>
-            <input type="text" id="form6Example1" [(ngModel)]=buyBook.readerName class="form-control" />
+            <input type="text" id="form6Example1" [(ngModel)]=obj.readerName class="form-control" />
 
           </div>
           </div>
         <div class="row">
           <div class="form-outline mb-2">
             <label class="form-label" for="form6Example1">Email</label>
-            <input type="email" id="form6Example1" [(ngModel)]=buyBook.readerEmailId class="form-control" />
+            <input type="email" id="form6Example1" [(ngModel)]=obj.readerEmailId class="form-control" />
 
           </div>
       </div>
           
         <div class="row"><div class="text-center">
-          <button type="button" class="btn  mb-4" (click)=" saveReaderDetails(buyBook)">Done</button>
+          <button type="button" class="btn  mb-4" (click)=" saveReaderDetails(obj)">Done</button>
       </div></div>
     
     </div>

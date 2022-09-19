@@ -6,6 +6,7 @@ import { Book } from './entity/book';
 
 const MAIN_URL = "http://localhost:9092/";
 const BASE_URL = "http://localhost:9092/savebook"
+const GET_DATA_BY_BID ="http://localhost:9092/books/";
 const SEARCH_BY_Category = "http://localhost:9092/books/category/search?category=";
 const SEARCH_BY_AuthorName = "http://localhost:9092/books/author/search?authorName=";
 const SEARCH_BY_Publisher = "http://localhost:9092/books/publisher/search?publisherName=";
@@ -49,6 +50,11 @@ export class BookService {
 
   }
    
+
+  getBookDataByBookId(id :number): Observable<Object> {
+    return this.http.get(GET_DATA_BY_BID + id);
+  }
+
   getLogin(a : Author)
   {
 
@@ -62,8 +68,8 @@ export class BookService {
   }
 
 
-  updateBookById(id:number){
-    this.http.put(UPDATE_BOOK_BY_BOOKID,id);
+  updateBookById(id:number , b: Book): Observable<Object>{
+    return this.http.put(UPDATE_BOOK_BY_BOOKID + id, b);
     }
 
     deleteBookByBookId( bookId  ): Observable<Object>

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import BuyBook from './entity/BuyBook';
+import Reader from './entity/Reader';
+
+
 
 const BASE_URL = "http://localhost:9094/purhase/";
 
@@ -10,9 +12,9 @@ const BASE_URL = "http://localhost:9094/purhase/";
 })
 export class RedaerServiceService {
 
-  orderBook(buyBook: BuyBook) {
+  orderBook(r: Reader) {
 
-    return this.http.post(BASE_URL, buyBook);
+    return this.http.post(BASE_URL, r);
 
 
   }
