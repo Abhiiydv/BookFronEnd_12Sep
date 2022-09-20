@@ -92,18 +92,12 @@ body {
     background-color: transparent
 }
 
-.btn-primary, .btn-primary.disabled, .btn-primary:disabled {
-    background-color: #4466f2!important;
-    border-color: #4466f2!important;
-}
+
 .mat-form-field{
   width: 90%;
 }
 
-.btn{
-  margin: 15px;
-  
-}
+
 .container-fluid{
     background-color: #232946;
 }

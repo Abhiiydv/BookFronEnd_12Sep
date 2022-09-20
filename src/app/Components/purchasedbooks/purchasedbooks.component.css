@@ -43,7 +43,7 @@
     }
 table{
     width: 50%;
-    margin-left: 30%;
+    margin-left: 25%;
     margin-top: 10px;
     text-align: center;
 }
@@ -53,5 +53,5 @@ th{
 }
 tr,td,th{
     width: 10%;
-    height: 10px;
+    height: 5px;
 }
