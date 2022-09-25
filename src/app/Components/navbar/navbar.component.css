@@ -17,3 +17,18 @@ button{
 button:hover{
   background-color: rgb(29, 90, 148);
 }
+mat-menu-item{
+  color: #1b203b;
+  
+
+}
+.btn{
+  background-color: #1b203b;
+  border: 0px;
+  margin: 0%;
+  padding: 0%;
+}
+.btn :hover{
+  background-color: rgb(29, 90, 148);
+  
+}

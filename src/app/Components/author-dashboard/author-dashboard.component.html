@@ -5,8 +5,8 @@
 
        <div class="row justify-content-center mt-5 mx-2 mb-3 mb-lg-3">
 
-        <p class="text-center h2 fw-bold mb-3 mx-1 mx-md-4 mt-4">Dear <span class="text-primary dark:text-secondary">Author</span></p>
-                    <p class="text-center h3 fw-bold mb-5 mx-1 mx-md-4 mt-2">Welcome <span> to dashboard.</span></p>
+        <p class="text-center h2 fw-bold mb-3 mx-1 mx-md-4 mt-4">Dear <span class="text-primary dark:text-secondary">{{userData.authorName}}</span></p>
+                    <p class="text-center h3 fw-bold mb-5 mx-1 mx-md-4 mt-2">Welcome <span> to Dashboard!</span></p>
        </div>
 
         <div class="row">
@@ -14,32 +14,31 @@
 
             <div class="col-sm-6">
 
-                <img src="assets/author.jpg" alt="">
+                <img src="assets/author.jpg" width="500px" alt="">
 
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-6 text-center">
 
-                <div class="d-flex btns justify-content-center  mx-2 mb-3 mb-lg-3">
+                
                     <button type="button" routerLink="/createbook" class="btn btn-block mb-2">Add Book</button>
                     
                     
-                  </div>
+                 
 
-                  <input type="text" id="form6Example3" [(ngModel)]="name" placeholder="Enter author name.."
+                  <!-- <input type="text" id="form6Example3" [(ngModel)]="name" placeholder="Enter author name.."
                   class="form-control" />
                 <button class="btn srchbttn btn-block mb-2" (click)="getyourBooks(name)"
-                  type="button">Search</button>
+                  type="button">Search</button> -->
                   
-                  <div class="row mt-2 justify-content-center">
-                    <div class="col justify-content-center" >
+                
                       
-                      <table class="text-center">
+                      <table class="text-center mt-5 table-striped">
+                      
                         <thead>
                             <tr>
                                
                                 <th>Title</th>
-                                
                                 <th>Active</th>
                                 <th>Action</th>
                             </tr>
@@ -64,9 +63,9 @@
                           </tr>
                       </table>
               
-                    </div>
+                 
               
-                  </div>
+                 
             </div>
           
 

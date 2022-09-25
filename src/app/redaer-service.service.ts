@@ -4,7 +4,7 @@ import Reader from './entity/Reader';
 
 
 
-const BASE_URL = "http://localhost:9094/purhase/";
+const BASE_URL = "https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/purchasebook";
 
 
 @Injectable({

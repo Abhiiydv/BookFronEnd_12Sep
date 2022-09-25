@@ -16,6 +16,7 @@ export class AuthorDashboardComponent implements OnInit {
   books: Book[] = [];
   name:string;
 
+  userData: any = history.state.data;
   b={
     bookId:0,
     authorId:0,
@@ -57,7 +58,8 @@ bres : Book = new Book();
     console.log("recordss");
     console.log(this.b);
   }
-
+ name2 : string = this.userData.authorName;
+ 
   getyourBooks(name: string){
 
     const promise = this.bs.searchbyAuthorname(name);
@@ -69,6 +71,7 @@ bres : Book = new Book();
 
     })
   }
+
 
   updateBook(bid: number) {
 
@@ -107,7 +110,13 @@ bres : Book = new Book();
   constructor(public bs : BookService , private ts: TransferService ,private router:Router) { }
 
   ngOnInit(): void {
+    const promise = this.bs.searchbyAuthorname(this.name2);
+    promise.subscribe((response) => {
+      console.log(response);
+      this.books = response as Book[];
 
-  }
+  })
 
 }
+}
+

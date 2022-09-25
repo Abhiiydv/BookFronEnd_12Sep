@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Author } from './entity/Author';
 
-const MAIN_URL= "http://localhost:9092/create-author";
+const MAIN_URL= "https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/saveauthor";
 
 @Injectable({
   providedIn: 'root'

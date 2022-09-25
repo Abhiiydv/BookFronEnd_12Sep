@@ -4,18 +4,22 @@ import { Observable } from 'rxjs';
 import { Author } from './entity/Author';
 import { Book } from './entity/book';
 
-const MAIN_URL = "http://localhost:9092/";
-const BASE_URL = "http://localhost:9092/savebook"
-const GET_DATA_BY_BID ="http://localhost:9092/books/";
-const SEARCH_BY_Category = "http://localhost:9092/books/category/search?category=";
-const SEARCH_BY_AuthorName = "http://localhost:9092/books/author/search?authorName=";
-const SEARCH_BY_Publisher = "http://localhost:9092/books/publisher/search?publisherName=";
-const FindActiveBooks = "http://localhost:9092/books/active";
-const SEARCH_BY_ANYTHING = "http://localhost:9092/searchbooks/?query=";
-const UPDATE_BOOK_BY_BOOKID ="http://localhost:9092/books/update/";
-const DELETE_BY_BOOKID ="http://localhost:9092/books/delete/";
-const login_url ="http://localhost:9092/login";
-const PURCHASED_BOOKS_URL ="http://localhost:9094/getPurchasedbooks/";
+const MAIN_URL = "https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/";
+const BASE_URL = "http://ec2-35-92-189-97.us-west-2.compute.amazonaws.com:9092/savebook"
+//const BASE_URL = "https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/"
+                
+const GET_DATA_BY_BID ="https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/getbook/";
+const SEARCH_BY_Category = "https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/";
+const SEARCH_BY_AuthorName = "https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/getbookbyauthor/";
+const SEARCH_BY_Publisher = "https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/getbookbypublisher/";
+const FindActiveBooks = "https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/getactivebook";
+
+//const SEARCH_BY_ANYTHING = "https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/getactivebook/searchanything/";
+const SEARCH_BY_ANYTHING = "http://ec2-35-92-189-97.us-west-2.compute.amazonaws.com:9092/searchbooks/?query=";
+const UPDATE_BOOK_BY_BOOKID ="https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/updatebook/";
+const DELETE_BY_BOOKID ="https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/deletebook/";
+const login_url ="https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/login";
+const PURCHASED_BOOKS_URL ="https://zbii4ztg30.execute-api.us-west-2.amazonaws.com/bookmanagement/purchasedbooks/";
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +40,7 @@ export class BookService {
   }
 
   getBookslist() {
-    return this.http.get(MAIN_URL + 'books');
+    return this.http.get(MAIN_URL);
   }
   searchbyCategory(enteredValue1: string): Observable<Object> {
     return this.http.get(SEARCH_BY_Category + enteredValue1);

@@ -15,17 +15,19 @@ button {
 .srchbttn{
     margin-left: 45%;
 }
-tr,th,td{
-    margin: 5px;
-    
-    padding-right:20px;
-}
-td{
-    margin: 50px;
+img{
+    margin-left: 10px;
 }
 table{
-    margin: auto;
+    text-align: center;
 }
   
 
-   
+th{
+    background-color: rgb(8, 8, 224);
+    color: white;
+}
+tr,td,th{
+    width: 10%;
+    height: 5px;
+}

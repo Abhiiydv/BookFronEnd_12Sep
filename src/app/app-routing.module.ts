@@ -61,6 +61,11 @@ const routes: Routes = [
     component: PurchasedbooksComponent,
     pathMatch: "full"
   },
+  {
+    path: "",
+    component: HomeComponent,
+    pathMatch: "full"
+  },
 ];
 
 @NgModule({

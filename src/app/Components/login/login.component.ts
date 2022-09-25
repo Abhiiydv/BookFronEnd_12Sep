@@ -23,12 +23,16 @@ export class LoginComponent implements OnInit {
  
  au : Author = new Author();
  auName:string;
+ returneduser : Author;
  login(){
 
  // console.log(this.au);
   const observable= this.bserv.getLogin(this.au);
   observable.subscribe((response)=>{
   console.log(response);
+  this.returneduser=response as Author;
+  console.log(this.returneduser);
+  
   
  // console.log(this.au);
 
@@ -37,7 +41,8 @@ export class LoginComponent implements OnInit {
     //this.auName = this.au.authorName;
   }
   else
-  this.router.navigate(['/author-dashboard']);
+  this.router.navigate(['/author-dashboard'],{state:{data:this.returneduser}});
+  
   
 },
 function(error){

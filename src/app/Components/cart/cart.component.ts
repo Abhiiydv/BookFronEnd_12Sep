@@ -46,6 +46,7 @@ export class CartComponent implements OnInit {
 
     observable.subscribe((response) => {
       console.log(response);
+      alert('Order done successfully!')
     },
       function (error) {
         console.log(error);

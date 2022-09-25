@@ -13,19 +13,34 @@
         <button mat-button routerLink="books">Books</button>
         <button mat-button routerLink="purchasedbooks">MyBooks</button>
         <button mat-button routerLink="login">Login</button>
+        <button mat-button routerLink="login">Logout</button>
         <button mat-button routerLink="signup">Signup</button>
         <button mat-button routerLink="viewcart"><span class="material-icons">shopping_cart</span></button>
     </div>
-    <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-        <mat-icon>menu</mat-icon>
-    </button>
+   
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
 
 </mat-toolbar>
-<mat-menu x-position="before" #menu="matMenu">
-
-    <button mat-menu-item routerLink="signup">Signup</button>
-
-    <button mat-menu-item routerLink="login">Login</button>
-    
+<mat-menu #menu="matMenu">
+    <button class="btn btn-primary text-center btn-outline-primary mb-1" mat-menu-item routerLink="home">
+      Home
+    </button>
+    <button class="btn btn-primary text-center btn-block mb-1" mat-menu-item routerLink="about">
+        About
+      </button>
+      <button class="btn btn-primary text-center btn-block mb-1" mat-menu-item routerLink="login">
+        Login
+      </button>
+      <button class="btn btn-primary  text-center btn-block mb-1" mat-menu-item routerLink="signup">
+        Signup
+      </button>
+      <button class="btn btn-primary text-center btn-block mb-1" mat-menu-item routerLink="purchasedbooks">
+        MyBooks
+      </button>
+      <button class="btn btn-primary text-center btn-block mb-1" mat-menu-item routerLink="viewcart">
+        <span class="material-icons">shopping_cart</span>
+      </button>
     <!--<button mat-menu-item>Help</button>-->
 </mat-menu>
